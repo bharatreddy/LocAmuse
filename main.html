@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Local Suggestions</title>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <!--<style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100%; width: 60%; }
+    </style> -->
+    <link rel="stylesheet" type="text/css" href="projSty.css">
+
+    <!-- <link href="/maps/documentation/javascript/examples/default.css" rel="stylesheet"> -->
+
+    <script>
+
+
+        function initialize() {
+
+          // Some basic options
+          var mapOptions = {
+            zoom: 12,
+            center: new google.maps.LatLng(37.23, -80.4178),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+
+          // The map object
+          var map = new google.maps.Map(document.getElementById('map-canvas'),
+              mapOptions);
+
+          // Set the traffic layer
+          var trafficLayer = new google.maps.TrafficLayer();
+          trafficLayer.setMap(map);
+
+          // Set the weather and cloud layer
+          var weatherLayer = new google.maps.weather.WeatherLayer({
+            temperatureUnits: google.maps.weather.TemperatureUnit.FAHRENHEIT
+          });
+          weatherLayer.setMap(map);
+
+          // comment out the cloud layer for now
+          // var cloudLayer = new google.maps.weather.CloudLayer();
+          // cloudLayer.setMap(map);
+
+        }
+
+        function loadScript() {
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCRot2zqzgcI5YgB4h8zzHfiWuA9M6ZqV0&sensor=false&libraries=weather&' +
+              'callback=initialize';
+
+          document.body.appendChild(script);
+        }
+
+        window.onload = loadScript;
+    </script>
+
+
+    
+</head>
+
+  <body>
+    
+    <div id="map-canvas"></div>
+
+    
+
+  </body>
+
+</html>
+

@@ -1,0 +1,22 @@
+<html>
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:5000/static/css/locAm.css">
+    <script type="text/javascript" src="http://localhost:5000/static/js/locAm.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    
+
+    {% if title %}
+    <title>{{title}} - microblog</title>
+    {% else %}
+    <title>microblog</title>
+    {% endif %}
+
+  </head>
+  
+  <body>
+    <div id ='results'>
+    {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

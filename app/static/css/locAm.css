@@ -1,0 +1,201 @@
+/*Main Body styling*/
+
+body { 
+
+    background: steelblue;
+}
+
+/*These correspond to the search for a location page*/
+
+#locationField, #controls {
+position: relative;
+width: 40%;
+}
+
+#autocomplete {
+position: absolute;
+top: 5%;
+padding-top: 2%;
+width: 99%;
+font-size: 12pt;
+}
+
+#imgintro {
+position: absolute;
+margin-top:-65%;
+margin-left:35%;
+}
+
+#textintro {
+position: absolute;
+top: 0px;
+margin-top:-5%;
+}
+
+.label {
+text-align: right;
+font-weight: bold;
+width: 100px;
+color: tomato;
+}
+
+#address {
+border: 1px solid #000090;
+background-color: Khaki;
+width: 40%;
+padding-right: 2px;
+margin-left:30%; 
+margin-top:1%; 
+}
+
+#address td {
+font-size: 12pt;
+}
+.field {
+width: 99%;
+}
+
+.slimField {
+width: 80px;
+}
+
+.wideField {
+width: 200px;
+}
+
+#locationField {
+height: 20px;
+margin-bottom: 2px;
+margin-left:30%; 
+margin-top:25%; 
+}
+
+#panel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
+/*These correspond to the results display page*/
+
+#map-canvas {
+    left: 10%;
+    height: 100%; 
+    width: 75%; 
+}
+
+#target {
+        width: 345px;
+      }
+
+.colTomato{
+
+    color: Tomato;
+}
+
+
+
+/* Buttons styling */
+
+.button {
+    background-color: #999;
+    background-image: -webkit-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    background-image:    -moz-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    background-image:     -ms-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    background-image:      -o-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    background-image:         linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+    border: none;
+    border-radius: .5em;
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.2),
+                inset 0 2px 0 hsla(0,0%,100%,.1),
+                inset 0 1.2em 0 hsla(0,0%,100%,0.1),
+                inset 0 -.2em 0 hsla(0,0%,100%,.1),
+                inset 0 -.25em 0 hsla(0,0%,0%,.25),
+                0 .25em .25em hsla(0,0%,0%,.05);
+    color: #444;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 .5em 1em;
+    padding: .5em 1.5em .75em;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.25);
+    vertical-align: middle;
+}
+.button:hover {
+    outline: none;
+}
+.button:hover,
+.button:focus {
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.2),
+                inset 0 2px 0 hsla(0,0%,100%,.1),
+                inset 0 1.2em 0 hsla(0,0%,100%,.1),
+                inset 0 -.2em 0 hsla(0,0%,100%,.1),
+                inset 0 -.25em 0 hsla(0,0%,0%,.25),
+                inset 0 0 0 3em hsla(0,0%,100%,.2),
+                0 .25em .25em hsla(0,0%,0%,.05);
+}
+.button:active {
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.2),
+                inset 0 2px 0 hsla(0,0%,100%,.1),
+                inset 0 1.2em 0 hsla(0,0%,100%,.1),
+                inset 0 0 0 3em hsla(0,0%,100%,.2),
+                inset 0 .25em .5em hsla(0,0%,0%,.05),
+                0 -1px 1px hsla(0,0%,0%,.1),
+                0 1px 1px hsla(0,0%,100%,.25);
+    margin-top: .25em;
+    outline: none;
+    padding-bottom: .5em;
+}
+
+/* Large */
+
+.large {
+    font-size: 1.25em;
+}
+
+/* Medium */
+
+.medium {
+    font-size: 1em;
+}
+
+/* Small */
+
+.small {
+    font-size: .75em;
+}
+
+/* Regular */
+
+.regular {
+    border-radius: .5em;
+}
+
+/* Square */
+
+.square {
+    border-radius: .25em;
+}
+
+/* Round */
+
+.round {
+    border-radius: 1.25em;
+}
+
+/* Red */
+
+.red {
+    background-color: #ff6c6f;
+}
+

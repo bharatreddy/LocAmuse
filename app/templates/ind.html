@@ -1,0 +1,276 @@
+{% extends "def.html" %}
+{% block content %}
+
+<script>
+
+// Define the address arrays
+var comratAdd = new Array();
+var yelpratAdd = new Array();
+var fsallratAdd = new Array();
+var fstrratAdd = new Array();
+
+// We get the addresses from each array and pass it to the javascript functions to overlay  
+
+// Start with combined ratings array
+acnt = 0
+{% for cloc in comlocs %}
+
+  var str0 = "{{ cloc.name }}"+ " ,"+"{{ cloc.address }}"
+  // Filter for some values...
+  var str1 = str0.replace(/u&#39;/g,"");
+  var str2 = str1.replace(/&#39;/g,"");
+  // This is what we want in the final string
+  var nstr = str2.replace(/u&#39;/g,"");
+  comratAdd[acnt] = nstr;
+
+  acnt = acnt + 1;
+
+{% endfor %}
+
+
+// Now with YELP ratings array
+acnt = 0
+{% for cloc in ylocs %}
+
+  var str0 = "{{ cloc.name }}"+ " ,"+"{{ cloc.address }}"
+  // Filter for some values...
+  var str1 = str0.replace(/u&#39;/g,"");
+  var str2 = str1.replace(/&#39;/g,"");
+  // This is what we want in the final string
+  var nstr = str2.replace(/u&#39;/g,"");
+  yelpratAdd[acnt] = nstr;
+
+  acnt = acnt + 1;
+
+{% endfor %}
+
+
+// Now with FS-ALL ratings array
+acnt = 0
+{% for cloc in falocs %}
+
+  var str0 = "{{ cloc.name }}"+ " ,"+"{{ cloc.address }}"
+  // Filter for some values...
+  var str1 = str0.replace(/u&#39;/g,"");
+  var str2 = str1.replace(/&#39;/g,"");
+  // This is what we want in the final string
+  var nstr = str2.replace(/u&#39;/g,"");
+  fsallratAdd[acnt] = nstr;
+
+  acnt = acnt + 1;
+
+{% endfor %}
+
+
+
+// Now with FS-ALL ratings array
+acnt = 0
+{% for cloc in ftlocs %}
+
+  var str0 = "{{ cloc.name }}"+ " ,"+"{{ cloc.address }}"
+  // Filter for some values...
+  var str1 = str0.replace(/u&#39;/g,"");
+  var str2 = str1.replace(/&#39;/g,"");
+  // This is what we want in the final string
+  var nstr = str2.replace(/u&#39;/g,"");
+  fstrratAdd[acnt] = nstr;
+
+  acnt = acnt + 1;
+
+{% endfor %}
+
+
+
+
+</script>
+
+{% if locat %}
+    <h1 class=" colTomato " >Suggestions for {{locat}}!</h1>
+{% else %}
+    <h1>Search for a Location</h1>
+{% endif %}
+
+<table>
+
+<tr>
+
+
+<a class="button small regular red" href="javascript:cRatUpdate( comratAdd );">Combined Ratings</a>
+<a class="button small regular red" href="javascript:yRatUpdate( yelpratAdd );">Ratings from YELP</a>
+<a class="button small regular red" href="javascript:fARatUpdate( fsallratAdd );">Ratings From FourSquare</a>
+<a class="button small regular red" href="javascript:fTRatUpdate( fstrratAdd );">FourSquare Trending</a>
+
+<td id = 'clickTeller' style="display:block">
+<h2> Click on any of the buttons above for ratings </h2>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+
+<!-- <div id = 'combined' style="display:block" width="50%"> -->
+
+<table border="2" width="250" bordercolor=SlateGray bgcolor=Khaki id = 'combined' style="display:none">
+
+<tr>
+<td>
+<h2>
+<font color=green>Combined ratings</font>
+</h2>
+</td>
+</tr>
+
+{% for cloc in comlocs %}
+<tr>
+<td height="50">
+  <b>{{cloc.rank}}</b>: {{cloc.name}}
+</td>
+</tr>
+{% endfor %}
+
+
+
+</table>
+
+<!-- </div> -->
+
+
+
+<!-- <div id = 'yelp' style="display:none"> -->
+
+<table border="2" width="250" bordercolor=SlateGray bgcolor=Khaki id = 'yelp' style="display:none">
+<tr>
+<td>
+<h2>
+<font color=green>YELP ratings</font>
+</h2>
+</td>
+</tr>
+
+{% for yloc in ylocs %}
+<tr>
+<td height="50">
+  <b>{{yloc.rank}}</b>: {{yloc.name}}
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<!-- </div> -->
+
+
+<!-- <div id = 'fsall' style="display:none"> -->
+
+<table border="2" width="250" bordercolor=SlateGray bgcolor=Khaki id = 'fsall' style="display:none">
+<tr>
+<td>
+<h2>
+<font color=green>FourSquare ratings</font>
+</h2>
+</td>
+</tr>
+
+
+{% for faloc in falocs %}
+<tr>
+<td height="50">
+  <b>{{faloc.rank}}</b>: {{faloc.name}}
+</td>
+</tr>
+{% endfor %}
+
+</table>
+<!-- </div> -->
+
+
+<!-- <div id = 'fstrnd' style="display:none"> -->
+
+<table id = 'fstrnd' style="display:none" border="2" width="250" bordercolor=SlateGray bgcolor=Khaki>
+
+<tr>
+<td>
+<h2>
+<font color=green>FourSquare Trending</font>
+</h2>
+</td>
+</tr>
+
+{% if ftlocs is mapping %}
+  <tr>
+    <td>
+      <p> No Trending Places </p>
+    </td>
+  </tr>
+
+{% else %}
+
+
+    {% for ftloc in ftlocs %}
+        <tr>
+          <td height="50">
+            <b>{{ftloc.rank}}</b>: {{ftloc.name}}
+          </td>
+        </tr>
+    {% endfor %}
+
+{% endif %}
+</table>
+
+
+<!-- </div> -->
+
+</td>
+
+<td id="map-canvas">
+
+<!-- <table>
+
+</table> -->
+
+</td>
+
+
+
+</tr>
+
+
+</table>
+
+<script>
+
+// Get the initial data
+var initratAdd = new Array();
+
+// we need the combined ratings array
+acnt = 0
+{% for cloc in comlocs %}
+
+  var str0 = "{{ cloc.address }}"
+  // Filter for some values...
+  var str1 = str0.replace(/u&#39;/g,"");
+  var str2 = str1.replace(/&#39;/g,"");
+  // This is what we want in the final string
+  var nstr = str2.replace(/u&#39;/g,"");
+  initratAdd[acnt] = nstr;
+
+  acnt = acnt + 1;
+
+{% endfor %}
+
+window.onload = startAllFunc();
+
+function startAllFunc() {
+
+  loadScript();
+  
+
+}
+
+
+</script>
+
+{% endblock %}
