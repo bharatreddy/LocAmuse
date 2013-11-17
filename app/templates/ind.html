@@ -85,7 +85,7 @@ acnt = 0
 </script>
 
 {% if locat %}
-    <h1 class=" colTomato " >Suggestions for {{locat}}!</h1>
+    <h1 class="colTomato" >Suggestions for {{locat}}</h1>
 {% else %}
     <h1>Search for a Location</h1>
 {% endif %}
@@ -113,19 +113,20 @@ acnt = 0
 
 <!-- <div id = 'combined' style="display:block" width="50%"> -->
 
-<table border="2" width="250" bordercolor=SlateGray bgcolor=Khaki id = 'combined' style="display:none">
+<!-- <table border="2" width="250" bordercolor=SlateGray bgcolor=#FFBF40 id = 'combined' style="display:none"> -->
+<table id = 'combined' class='tabDesign' style="display:none">
 
 <tr>
 <td>
 <h2>
-<font color=green>Combined ratings</font>
+<font color=#1D7373>Combined ratings</font>
 </h2>
 </td>
 </tr>
 
 {% for cloc in comlocs %}
 <tr>
-<td height="50">
+<td height="50" class="tdResTab">
   <b>{{cloc.rank}}</b>: {{cloc.name}}
 </td>
 </tr>
@@ -141,18 +142,19 @@ acnt = 0
 
 <!-- <div id = 'yelp' style="display:none"> -->
 
-<table border="2" width="250" bordercolor=SlateGray bgcolor=Khaki id = 'yelp' style="display:none">
+<!-- <table border="2" width="250" bordercolor=SlateGray bgcolor=#FFBF40 id = 'yelp' style="display:none"> -->
+<table id = 'yelp' class='tabDesign' style="display:none">
 <tr>
 <td>
 <h2>
-<font color=green>YELP ratings</font>
+<font color=#1D7373>YELP ratings</font>
 </h2>
 </td>
 </tr>
 
 {% for yloc in ylocs %}
 <tr>
-<td height="50">
+<td height="50" class="tdResTab">
   <b>{{yloc.rank}}</b>: {{yloc.name}}
 </td>
 </tr>
@@ -165,11 +167,13 @@ acnt = 0
 
 <!-- <div id = 'fsall' style="display:none"> -->
 
-<table border="2" width="250" bordercolor=SlateGray bgcolor=Khaki id = 'fsall' style="display:none">
+<!-- <table border="2" width="250" bordercolor=SlateGray bgcolor=#FFBF40 id = 'fsall' style="display:none">
+ -->
+<table id = 'fsall' class='tabDesign' style="display:none">
 <tr>
 <td>
 <h2>
-<font color=green>FourSquare ratings</font>
+<font color=#1D7373>FourSquare ratings</font>
 </h2>
 </td>
 </tr>
@@ -177,8 +181,10 @@ acnt = 0
 
 {% for faloc in falocs %}
 <tr>
-<td height="50">
+<td height="50" class="tdResTab">
+  <!-- <font color=black> -->
   <b>{{faloc.rank}}</b>: {{faloc.name}}
+  <!-- </font> -->
 </td>
 </tr>
 {% endfor %}
@@ -189,12 +195,13 @@ acnt = 0
 
 <!-- <div id = 'fstrnd' style="display:none"> -->
 
-<table id = 'fstrnd' style="display:none" border="2" width="250" bordercolor=SlateGray bgcolor=Khaki>
+<!-- <table id = 'fstrnd' style="display:none" border="2" width="250" bordercolor=SlateGray bgcolor=#FFBF40> -->
 
+<table id = 'fstrnd' class='tabDesign' style="display:none">
 <tr>
 <td>
 <h2>
-<font color=green>FourSquare Trending</font>
+<font color=#1D7373>FourSquare Trending</font>
 </h2>
 </td>
 </tr>
@@ -211,7 +218,7 @@ acnt = 0
 
     {% for ftloc in ftlocs %}
         <tr>
-          <td height="50">
+          <td height="50" class="tdResTab">
             <b>{{ftloc.rank}}</b>: {{ftloc.name}}
           </td>
         </tr>

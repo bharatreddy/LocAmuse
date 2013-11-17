@@ -322,7 +322,7 @@ function fillInAddress() {
     }
   }
   // console.log(formAddress)
-  var url = "http://localhost:5000/resdisp/"+formAddress;
+  var url = "/resdisp/"+formAddress;
   // console.log(place)
   window.open (url,'_self',false);
 

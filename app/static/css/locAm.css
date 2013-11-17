@@ -2,7 +2,7 @@
 
 body { 
 
-    background: steelblue;
+    background: #29497f;
 }
 
 /*These correspond to the search for a location page*/
@@ -13,23 +13,26 @@ width: 40%;
 }
 
 #autocomplete {
-position: absolute;
-top: 5%;
-padding-top: 2%;
+/*position: absolute;*/
+/*top: 5%;*/
+padding: .5em;
 width: 99%;
 font-size: 12pt;
+border-radius: 5pt;
 }
 
 #imgintro {
-position: absolute;
-margin-top:-65%;
-margin-left:35%;
+/*position: absolute;*/
+/*margin-top:-65%;*/
+/*margin-left:35%;*/
+text-align: center;
 }
 
 #textintro {
-position: absolute;
+/*position: absolute;*/
 top: 0px;
-margin-top:-5%;
+margin-bottom: 0;
+/*margin-top:-5%;*/
 }
 
 .label {
@@ -64,10 +67,10 @@ width: 200px;
 }
 
 #locationField {
-height: 20px;
-margin-bottom: 2px;
-margin-left:30%; 
-margin-top:25%; 
+/*height: 20px;*/
+/*margin-bottom: 2px;*/
+/*margin-left:30%; */
+/*margin-top:25%; */
 }
 
 #panel {
@@ -95,9 +98,23 @@ margin-top:25%;
 
 .colTomato{
 
-    color: Tomato;
+    color: #FFA400;
 }
 
+.tabDesign{
+
+    box-shadow: inset -3px 3px 10px rgba(0,0,0,0.5), inset 3px -3px 10px rgba(0,0,0,0.5);
+    background-color: #FFA400;
+    padding : 10px;
+    border-radius: 5px;
+}
+
+.tdResTab{
+
+    border-bottom: 1px solid black;
+    color: black;
+
+}
 
 
 /* Buttons styling */
@@ -196,6 +213,6 @@ margin-top:25%;
 /* Red */
 
 .red {
-    background-color: #ff6c6f;
+    background-color: #BF8C30;
 }
 
